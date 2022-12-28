@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@next/font': 13.0.7
+  '@types/echarts': ^4.9.16
   '@types/node': 18.11.15
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
@@ -27,6 +28,9 @@ dependencies:
   react: registry.npmmirror.com/react/18.2.0
   react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
   typescript: registry.npmmirror.com/typescript/4.9.4
+
+devDependencies:
+  '@types/echarts': registry.npmmirror.com/@types/echarts/4.9.16
 
 packages:
 
@@ -316,6 +320,14 @@ packages:
       tslib: registry.npmmirror.com/tslib/2.4.1
     dev: false
 
+  registry.npmmirror.com/@types/echarts/4.9.16:
+    resolution: {integrity: sha512-bfiagfPw3dWauAIJ9fgoJQoL4hLWlGcltqwbE6LGye0NIY5xnbZau+mDmadCzGojic3MWuFDCUiO25kl4sRGeA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/echarts/-/echarts-4.9.16.tgz}
+    name: '@types/echarts'
+    version: 4.9.16
+    dependencies:
+      '@types/zrender': registry.npmmirror.com/@types/zrender/4.0.3
+    dev: true
+
   registry.npmmirror.com/@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/json5/-/json5-0.0.29.tgz}
     name: '@types/json5'
@@ -357,6 +369,12 @@ packages:
     name: '@types/scheduler'
     version: 0.16.2
     dev: false
+
+  registry.npmmirror.com/@types/zrender/4.0.3:
+    resolution: {integrity: sha512-EPI269lkHNsObwILJ1k1z7znLjKyePuWRy/XKK0shSGpBb9cIX307arcwJV4+2NeZj5wEjN06r4D8yFv7sI06g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/zrender/-/zrender-4.0.3.tgz}
+    name: '@types/zrender'
+    version: 4.0.3
+    dev: true
 
   registry.npmmirror.com/@typescript-eslint/parser/5.46.1_ha6vam6werchizxrnqvarmz2zu:
     resolution: {integrity: sha512-RelQ5cGypPh4ySAtfIMBzBGyrNerQcmfA1oJvPj5f+H4jI59rl9xxpn4bonC0tQvUKOEN7eGBFWxFLK3Xepneg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@typescript-eslint/parser/-/parser-5.46.1.tgz}

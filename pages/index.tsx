@@ -2,23 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 
-// Echarts
-import ReactEChartsCore from 'echarts-for-react/lib/core'
-import * as echarts from 'echarts/core'
-import {
-  BarChart,
-} from 'echarts/charts';
-import {
-  GridComponent,
-} from 'echarts/components'
-
 import styles from '../styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
-
-// echarts.use(
-//   [GridComponent, BarChart, CanvasRenderer],
-// )
 
 export default function Home() {
   return (
