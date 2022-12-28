@@ -12,9 +12,34 @@ export default function turbopack() {
       node.symbolSize = 10;
   })
 
+  // Sample json data form, ideal form.
+  const data = {
+    "functions": [
+      { // TODO: Iterate every functions to add id.
+        "id": "0",
+        "name": "main()",
+        "value": "",
+        "category": "src/assets/pages/nodes.rs", // file.
+      },
+      { // TODO: Iterate every functions to add id.
+        "id": "1",
+        "name": "next()",
+        "value": "", // belonging file.
+        "category": "src/assets/pages/nodes.rs", // file, divided by different colors.
+      }
+    ],
+    "calls": [
+      {
+        "source": "1",
+        "target": "0"
+      },
+    ],
+    // TODO: Extract categories from functions array, and merge them into `categories` field.
+  };
+
   const options: EChartOption = {
     title: {
-      text: 'Visualize turbopack',
+      text: 'Visualize turbopack top title',
       subtext: 'Default layout',
       top: 'bottom',
       left: 'right'
@@ -27,7 +52,7 @@ export default function turbopack() {
     ],
     series: [
       {
-        name: 'Visualize turbopack',
+        name: 'Visualize turbopack ----',
         type: 'graph',
         layout: 'force',
         data: graph.nodes, // Represent functions

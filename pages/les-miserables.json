@@ -2,8 +2,8 @@
     "nodes": [
       {
         "id": "0",
-        "name": "Myriel",
-        "value": 28.685715,
+        "name": "Napoleon()",
+        "value": "src/assets/pages/nodes.rs",
         "category": 0
       },
       {
