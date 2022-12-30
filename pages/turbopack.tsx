@@ -3,39 +3,16 @@
  */
 
 import ReactECharts from 'echarts-for-react';
-import graph from './les-miserables.json';
+import graph from './new-new-result.json';
 
 import type { EChartOption } from 'echarts';
 
 export default function turbopack() {
-  graph.nodes.forEach((node) => {
+  graph.functions.forEach((node) => {
       node.symbolSize = 10;
   })
 
-  // Sample json data form, ideal form.
-  const data = {
-    "functions": [
-      { // TODO: Iterate every functions to add id.
-        "id": "0",
-        "name": "main()",
-        "value": "",
-        "category": "src/assets/pages/nodes.rs", // file.
-      },
-      { // TODO: Iterate every functions to add id.
-        "id": "1",
-        "name": "next()",
-        "value": "", // belonging file.
-        "category": "src/assets/pages/nodes.rs", // file, divided by different colors.
-      }
-    ],
-    "calls": [
-      {
-        "source": "1",
-        "target": "0"
-      },
-    ],
-    // TODO: Extract categories from functions array, and merge them into `categories` field.
-  };
+  console.log(graph.functions.length);
 
   const options: EChartOption = {
     title: {
@@ -45,18 +22,18 @@ export default function turbopack() {
       left: 'right'
     },
     tooltip: {},
-    legend: [
-      {
-        data: graph.categories.map((category) => category.name),
-      }
-    ],
+    // legend: [
+    //   {
+    //     data: graph.categories.map((category) => category.name),
+    //   }
+    // ],
     series: [
       {
         name: 'Visualize turbopack ----',
         type: 'graph',
         layout: 'force',
-        data: graph.nodes, // Represent functions
-        links: graph.links, // Function-call relationships
+        data: graph.functions, // Represent functions
+        links: graph.calls, // Function-call relationships
         categories: graph.categories, // Represent files
         roam: true,
         label: {
@@ -67,38 +44,38 @@ export default function turbopack() {
           show: false,
         },
         force: {
-          repulsion: 200,
+          repulsion: 500,
           gravity: 0.1,
         },
-        draggable: true,
+        draggable: false,
         symbol: 'circle',
         edgeSymbol: ['none', 'arrow'],
         edgeSymbolSize: 10,
         itemStyle: {
           opacity: 1,
         },
-        emphasis: {
-          focus: 'adjacency', // Focus all related nodes with the Hovering node.
-          blurScope: 'global',
-        },
+        // emphasis: {
+        //   focus: 'adjacency', // Focus all related nodes with the Hovering node.
+        //   blurScope: 'global',
+        // },
 
-        hideOverlap: true,
+        // hideOverlap: true,
         // moveOverlap: "shiftY",
 
         selectedMode: 'multiple', // Only select one node once, so you have to click multiple times to select more nodes.
 
-        select: {
-          itemStyle: {
-            borderColor: 'red',
-            borderWidth: '1px',
-          },
-          lineStyle: {
-            width: 5,
-          },
-          label: {
-            color: 'red',
-          },
-        },
+        // select: {
+        //   itemStyle: {
+        //     borderColor: 'red',
+        //     borderWidth: '1px',
+        //   },
+        //   lineStyle: {
+        //     width: 5,
+        //   },
+        //   label: {
+        //     color: 'red',
+        //   },
+        // },
       }
     ],
   }
